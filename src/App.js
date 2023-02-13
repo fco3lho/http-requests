@@ -6,24 +6,13 @@ import {useFetch} from './hooks/useFetch'
 const url = "http://localhost:3000/products"
 
 function App() {
-  const [products, setProducts] = useState([]);
   const [name, setName] = useState("");
   const [price, setPrice] = useState("")
 
-  // -------------------------------------- GET -------------------------------------- 
+  // -------------------------------------- GET - READ -------------------------------------- 
   const {data: items, httpConfig, loading, error} = useFetch(url) //Essa função localizada em "/hooks/useFetch" substitui a função "useEffect()" abaixo.
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const res = await fetch(url)
-  //     const data = await res.json()
-  //     setProducts(data)
-  //   }
-
-  //   fetchData( )
-  // }, []);
-
-  // -------------------------------------- POST -------------------------------------- 
+  // -------------------------------------- POST - CREATE -------------------------------------- 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -32,19 +21,7 @@ function App() {
       price
     }
 
-    // Abaixo, na constante 'res', se encontra a configuração do HTTP que foi substituido pela função "httpConfig() encontrada no arquivo /hooks/useFetch"
-    // const res = await fetch(url, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json"
-    //   },
-    //   body: JSON.stringify(product)
-    // })
-
-    // -------------------------------------- PUT -------------------------------------- 
-    // const addedProduct = await res.json()
-    // setProducts((prevProducts) => [...prevProducts, addedProduct]) 
-
+    // -------------------------------------- PUT - UPDATE -------------------------------------- 
     httpConfig(product, "POST")
     setName("") //Limpa o campo do input Name
     setPrice("") //Limpa o campo do input Price

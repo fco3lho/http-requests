@@ -1,19 +1,19 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Camisa",
-      "price": 59.9
-    },
-    {
-      "id": 2,
-      "name": "Calça vermelha",
-      "price": 90
-    },
-    {
       "id": 3,
       "name": "Boné aba reta",
       "price": 29.9
+    },
+    {
+      "name": "Mouse Razer",
+      "price": "299.90",
+      "id": 4
+    },
+    {
+      "name": "Notebook Xuxa",
+      "price": "3990.89",
+      "id": 5
     }
   ]
 }
